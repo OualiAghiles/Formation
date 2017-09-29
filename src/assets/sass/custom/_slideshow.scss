@@ -12,7 +12,7 @@
 }
 
 .carousel-caption {
-  top: 10%;
+  top: 0;
   h1 {
     font-size: 6em;
     font-weight: bold;
@@ -121,10 +121,12 @@
 }
 
 .carousel-caption {
-  left: 60%;
-  padding-bottom: 5%;
-  right: 0;
-  text-align: left;
+  width: 50%;
+  height: 100%;
+  background: rgba($gray-900,0.9);
+  padding-bottom: 0;
+  left: 0!important;
+  bottom: 0;
   h1 {
     font-family: raavi;
     font-size: 60px;

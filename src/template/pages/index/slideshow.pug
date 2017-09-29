@@ -65,20 +65,18 @@ mixin carousel_animate(id, carousel_items, slides)
             // Slide Background
             img.d-block.w-100()&attributes(imgSlide)
             .bs-slider-overlay
-            .container-fluid
-              .row
-                // Slide Text Layer
-                - var sc_caption={"class":slide_item.captionCls}
-                .carousel-caption.d-none.d-md-block()&attributes(sc_caption)
-                  - var contentCaption = {"data-animation":slide_item.animationTitle}
-                  h1()&attributes(contentCaption)= slide_item.titleText
-                  p(data-animation='animated fadeInLeft') Bootstrap carousel now touch enable slide.
-                  a.btn.btn-outline-primary(href='#', target='_blank', data-animation='animated fadeInLeft') select one
-    a.left.carousel-control(href='#sc_carousel', role='button', data-slide='prev')
+            // Slide Text Layer
+            - var sc_caption={"class":slide_item.captionCls}
+            .carousel-caption.d-none.d-md-block(data-animation='animated fadeInLeft')&attributes(sc_caption)
+              - var contentCaption = {"data-animation":slide_item.animationTitle}
+              h1()&attributes(contentCaption)= slide_item.titleText
+              p(data-animation='animated fadeInLeft') Bootstrap carousel now touch enable slide.
+              a.btn.btn-outline-primary(href='#', target='_blank', data-animation='animated fadeInLeft') select one
+    a.left.carousel-control(href='#'+id, role='button', data-slide='prev')
       span.fa.fa-angle-left(aria-hidden='true')
       span.sr-only Previous
     // Right Control
-    a.right.carousel-control(href='#sc_carousel', role='button', data-slide='next')
+    a.right.carousel-control(href='#'+id, role='button', data-slide='next')
       span.fa.fa-angle-right(aria-hidden='true')
       span.sr-only Next
 +carousel_animate("sc_carousel",[
@@ -86,19 +84,19 @@ mixin carousel_animate(id, carousel_items, slides)
   {"id":"#sc_carousel","order":"1" },
   {"id":"#sc_carousel","order":"2" }],[
     { 
-      "src":"https://images.pexels.com/photos/144345/pexels-photo-144345.jpeg?w=940&h=650&auto=compress&cs=tinysrgb", 
+      "src":"https://images.pexels.com/photos/168872/pexels-photo-168872.jpeg?w=960&h=650&auto=compress&cs=tinysrgb", 
       "active":"active",
       "alt":"",
       "captionCls":"slide_style_left",
-      "animationTitle":"animated", 
-      "animationBtnStart":"animated",
-      "animationBtnEnd":"animated",
+      "animationTitle":"animated fadeInRight", 
+      "animationBtnStart":"animated fadeInRight",
+      "animationBtnEnd":"animated ",
       "titleText":"Titre", 
       "contentText":"Contenu",
       "linkBtn":"#" 
     },
     { 
-      "src":"https://images.pexels.com/photos/207990/pexels-photo-207990.jpeg?w=940&h=650&auto=compress&cs=tinysrgb", 
+      "src":"https://images.pexels.com/photos/54567/pexels-photo-54567.jpeg?w=960&h=650&auto=compress&cs=tinysrgb", 
       "alt":"",
       "captionCls":"slide_style_left",
       "animationTitle":"animated", 
@@ -109,7 +107,7 @@ mixin carousel_animate(id, carousel_items, slides)
       "linkBtn":"#" 
     },
     { 
-      "src":"https://images.pexels.com/photos/144346/pexels-photo-144345.jpeg?w=940&h=650&auto=compress&cs=tinysrgb", 
+      "src":"https://images.pexels.com/photos/364308/pexels-photo-364308.jpeg?w=960&h=600&auto=compress&cs=tinysrgb", 
       "alt":"",
       "captionCls":"slide_style_left",
       "animationTitle":"animated", 
