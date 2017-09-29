@@ -1,4 +1,4 @@
-#sg-carousel( class="carousel slide carousel-fade" data-ride="carousel")
+//#sg-carousel( class="sc_carousel carousel slide carousel-fade" data-ride="carousel")
   // Indicators
   ol.carousel-indicators
     li.active(data-target='#sg-carousel', data-slide-to='0')
@@ -52,3 +52,74 @@
       span.fa.fa-angle-right(aria-hidden='true')
       span.sr-only Next
 // End  bootstrap-touch-slider Slider
+mixin carousel_animate(id, carousel_items, slides)
+  div(id=id class="sc_carousel carousel  slide carousel-fade" data-ride="carousel")
+    ol.carousel-indicators
+      each item in carousel_items
+        - var simple_slide ={"class":item.cls, 'data-slide-to':item.order, "data-target":item.id}
+        li()&attributes(simple_slide)          
+    .carousel-inner.carousel-zoom(role='listbox')      
+      each slide_item in slides
+        .carousel-item(class=slide_item.active)
+          - var imgSlide={"src":slide_item.src, "alt":slide_item.alt}
+            // Slide Background
+            img.d-block.w-100()&attributes(imgSlide)
+            .bs-slider-overlay
+            .container-fluid
+              .row
+                // Slide Text Layer
+                - var sc_caption={"class":slide_item.captionCls}
+                .carousel-caption.d-none.d-md-block()&attributes(sc_caption)
+                  - var contentCaption = {"data-animation":slide_item.animationTitle}
+                  h1()&attributes(contentCaption)= slide_item.titleText
+                  p(data-animation='animated fadeInLeft') Bootstrap carousel now touch enable slide.
+                  a.btn.btn-outline-primary(href='#', target='_blank', data-animation='animated fadeInLeft') select one
+    a.left.carousel-control(href='#sc_carousel', role='button', data-slide='prev')
+      span.fa.fa-angle-left(aria-hidden='true')
+      span.sr-only Previous
+    // Right Control
+    a.right.carousel-control(href='#sc_carousel', role='button', data-slide='next')
+      span.fa.fa-angle-right(aria-hidden='true')
+      span.sr-only Next
++carousel_animate("sc_carousel",[
+  {"cls":"active","id":"#sc_carousel","order":"0" },
+  {"id":"#sc_carousel","order":"1" },
+  {"id":"#sc_carousel","order":"2" }],[
+    { 
+      "src":"https://images.pexels.com/photos/144345/pexels-photo-144345.jpeg?w=940&h=650&auto=compress&cs=tinysrgb", 
+      "active":"active",
+      "alt":"",
+      "captionCls":"slide_style_left",
+      "animationTitle":"animated", 
+      "animationBtnStart":"animated",
+      "animationBtnEnd":"animated",
+      "titleText":"Titre", 
+      "contentText":"Contenu",
+      "linkBtn":"#" 
+    },
+    { 
+      "src":"https://images.pexels.com/photos/207990/pexels-photo-207990.jpeg?w=940&h=650&auto=compress&cs=tinysrgb", 
+      "alt":"",
+      "captionCls":"slide_style_left",
+      "animationTitle":"animated", 
+      "animationBtnStart":"animated",
+      "animationBtnEnd":"animated",
+      "titleText":"Titre", 
+      "contentText":"Contenu",
+      "linkBtn":"#" 
+    },
+    { 
+      "src":"https://images.pexels.com/photos/144346/pexels-photo-144345.jpeg?w=940&h=650&auto=compress&cs=tinysrgb", 
+      "alt":"",
+      "captionCls":"slide_style_left",
+      "animationTitle":"animated", 
+      "animationBtnStart":"animated",
+      "animationBtnEnd":"animated",
+      "titleText":"Titre", 
+      "contentText":"Contenu",
+      "linkBtn":"#" 
+    }
+  
+  
+  ]
+  )

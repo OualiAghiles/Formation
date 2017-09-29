@@ -18,8 +18,8 @@ $(document).ready(function() {
 	}
 
 	//Variables on page load
-	var $myCarousel = $('#sg-carousel'),
-		$firstAnimatingElems = $myCarousel.find('.item:first').find("[data-animation ^= 'animated']");
+	var $myCarousel = $('.sc_carousel'),
+		$firstAnimatingElems = $myCarousel.find('.carousel-item:first').find("[data-animation ^= 'animated']");
 
 	//Initialize carousel
 	$myCarousel.carousel();
@@ -38,4 +38,4 @@ $(document).ready(function() {
 	});
 
 
-})(jQuery);	
+})(jQuery);
