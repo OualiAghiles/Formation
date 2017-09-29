@@ -1,0 +1,30 @@
+//----------------------------------------------
+                  Navbar
+//----------------------------------------------
+body
+  padding-top: 60px
+  background: $body-bg
+.bg-sc
+  background: #fff
+  box-shadow: 0 4px 8px -3px rgba(17, 17, 17, 0.1)
+@media (min-width: 992px)
+  .navbar-expand-lg
+    padding: 0
+    .navbar-brand
+      margin: 0
+    .navbar-nav
+      .nav-link
+        line-height: 2.75rem
+        padding-left: 0.7rem
+        padding-right: 0.7rem
+        &:hover,&:focus
+          background: theme-color("primary")
+          color: #fff
+          transition: 0.5s
+          transition-property: background
+      .nav-item.active
+        background: theme-color("primary")
+        a
+         color: #fff !important
+
+
