@@ -49,7 +49,7 @@ gulp.task('images',function(){
         .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
         .pipe(gulp.dest('dist/assets/images'))
         .pipe(browserSync.stream())
-        .pipe(notify('image task finished'))
+        ////.pipe(notify('image task finished'))
 });
 //------------------------------------------------------------
 //      copy
@@ -58,7 +58,7 @@ gulp.task('copy',function(){
     gulp.src(['src/bower_components/bootstrap/dist/js/bootstrap.js', 'src/bower_components/popper.js/dist/popper.min.js','src/bower_components/jquery/dist/jquery.js'])
         .pipe(gulp.dest('dist/assets/scripts'))
         .pipe(browserSync.stream())
-        .pipe(notify('image task finished'))
+        ////.pipe(notify('image task finished'))
 });
 //------------------------------------------------------------
 //      SASS
@@ -108,7 +108,7 @@ return gulp.src('src/assets/js/**/*.js')
 .pipe(uglify())
 .pipe(gulp.dest('dist/assets/scripts/'))
 .pipe(browserSync.reload({stream:true}))
-.pipe(notify('JS task finished'))
+//.pipe(notify('JS task finished'))
 });
 //------------------------------------------------------------
 //      PUG
@@ -124,7 +124,7 @@ gulp.src(['src/template/**/*.pug'])
     .pipe(pug())
     .pipe(gulp.dest('dist/'))
     .pipe(browserSync.reload({stream:true}))
-    .pipe(notify('html task finished'))
+    //.pipe(notify('html task finished'))
 });
 
 gulp.task('watch', ['browser-sync'], function(){
