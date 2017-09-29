@@ -1,18 +1,54 @@
-#carouselExampleIndicators.carousel.slide(data-ride='carousel')
+#sg-carousel( class="carousel slide carousel-fade" data-ride="carousel")
+  // Indicators
   ol.carousel-indicators
-    li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
-    li(data-target='#carouselExampleIndicators', data-slide-to='1')
-    li(data-target='#carouselExampleIndicators', data-slide-to='2')
-  .carousel-inner
+    li.active(data-target='#sg-carousel', data-slide-to='0')
+    li(data-target='#sg-carousel', data-slide-to='1')
+    li(data-target='#sg-carousel', data-slide-to='2')
+  // Wrapper For Slides
+  .carousel-inner.carousel-zoom(role='listbox')
+    // Third Slide
     .carousel-item.active
-      img.d-block.w-100(src='https://source.unsplash.com/1600x600/?nature,animal', alt='First slide')
+      // Slide Background
+      img.d-block.w-100(src='https://images.pexels.com/photos/48726/pexels-photo-48726.jpeg?w=940&h=650&auto=compress&cs=tinysrgb', alt='Bootstrap Touch Slider')
+      .bs-slider-overlay
+      .container-fluid
+        .row
+          // Slide Text Layer
+          .carousel-caption.d-none.d-md-block.slide_style_left
+            h1(data-animation='animated zoomInRight') Bootstrap Carousel
+            p(data-animation='animated fadeInLeft') Bootstrap carousel now touch enable slide.
+            a.btn.btn-default(href='http://bootstrapthemes.co/', target='_blank', data-animation='animated fadeInLeft') select one
+            a.btn.btn-primary(href='http://bootstrapthemes.co/', target='_blank', data-animation='animated fadeInRight') select two
+    // End of Slide
+    // Second Slide
     .carousel-item
-      img.d-block.w-100(src='https://source.unsplash.com/1600x600/?nature,fire', alt='Second slide')
+      // Slide Background
+      img.d-block.w-100(src='https://images.pexels.com/photos/207990/pexels-photo-207990.jpeg?w=940&h=650&auto=compress&cs=tinysrgb', alt='Bootstrap Touch Slider')
+      .bs-slider-overlay
+      // Slide Text Layer
+      .carousel-caption.d-none.d-md-block.slide_style_center
+        h1(data-animation='animated flipInX') Bootstrap touch slider
+        p(data-animation='animated lightSpeedIn') Make Bootstrap Better together.
+        a.btn.btn-default(href='http://bootstrapthemes.co/', target='_blank', data-animation='animated fadeInUp') select one
+        a.btn.btn-primary(href='http://bootstrapthemes.co/', target='_blank', data-animation='animated fadeInDown') select two
+    // End of Slide
+    // Third Slide
     .carousel-item
-      img.d-block.w-100(src='https://source.unsplash.com/1600x600/?nature,fog', alt='Third slide')
-  a.carousel-control-prev(href='#carouselExampleIndicators', role='button', data-slide='prev')
-    span.carousel-control-prev-icon(aria-hidden='true')
-    span.sr-only Previous
-  a.carousel-control-next(href='#carouselExampleIndicators', role='button', data-slide='next')
-    span.carousel-control-next-icon(aria-hidden='true')
-    span.sr-only Next
+      // Slide Background
+      img.d-block.w-100(src='https://images.pexels.com/photos/144345/pexels-photo-144345.jpeg?w=940&h=650&auto=compress&cs=tinysrgb', alt='Bootstrap Touch Slider')
+      .bs-slider-overlay
+      // Slide Text Layer
+      .carousel-caption.d-none.d-md-block.slide_style_right
+        h1(data-animation='animated zoomInLeft') Beautiful Animations
+        p(data-animation='animated fadeInRight') Lots of css3 Animations to make slide beautiful .
+        a.btn.btn-default(href='http://bootstrapthemes.co/', target='_blank', data-animation='animated fadeInLeft') select one
+        a.btn.btn-primary(href='http://bootstrapthemes.co/', target='_blank', data-animation='animated fadeInRight') select two
+
+    a.left.carousel-control(href='#sg-carousel', role='button', data-slide='prev')
+      span.fa.fa-angle-left(aria-hidden='true')
+      span.sr-only Previous
+    // Right Control
+    a.right.carousel-control(href='#sg-carousel', role='button', data-slide='next')
+      span.fa.fa-angle-right(aria-hidden='true')
+      span.sr-only Next
+// End  bootstrap-touch-slider Slider
