@@ -1,0 +1,9 @@
+mixin sc_stadium(sc_card)
+    each card in sc_card
+        div("class"= card.responciveCls)
+            .service("class"= card.colorCls)
+                .icon-holder
+                    img.icon(src= card.imgCard, alt='')
+                h4.heading()= card.headingCard
+                p.description
+                    | #{card.descriptionCard}
