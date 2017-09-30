@@ -1,124 +1,55 @@
-//#sg-carousel( class="sc_carousel carousel slide carousel-fade" data-ride="carousel")
-  // Indicators
-  ol.carousel-indicators
-    li.active(data-target='#sg-carousel', data-slide-to='0')
-    li(data-target='#sg-carousel', data-slide-to='1')
-    li(data-target='#sg-carousel', data-slide-to='2')
-  // Wrapper For Slides
-  .carousel-inner.carousel-zoom(role='listbox')
-    // Third Slide
-    .carousel-item.active
-      // Slide Background
-      img.d-block.w-100(src='https://images.pexels.com/photos/48726/pexels-photo-48726.jpeg?w=940&h=650&auto=compress&cs=tinysrgb', alt='Bootstrap Touch Slider')
-      .bs-slider-overlay
-      .container-fluid
-        .row
-          // Slide Text Layer
-          .carousel-caption.d-none.d-md-block.slide_style_left
-            h1(data-animation='animated zoomInRight') Bootstrap Carousel
-            p(data-animation='animated fadeInLeft') Bootstrap carousel now touch enable slide.
-            a.btn.btn-default(href='http://bootstrapthemes.co/', target='_blank', data-animation='animated fadeInLeft') select one
-            a.btn.btn-primary(href='http://bootstrapthemes.co/', target='_blank', data-animation='animated fadeInRight') select two
-    // End of Slide
-    // Second Slide
-    .carousel-item
-      // Slide Background
-      img.d-block.w-100(src='https://images.pexels.com/photos/207990/pexels-photo-207990.jpeg?w=940&h=650&auto=compress&cs=tinysrgb', alt='Bootstrap Touch Slider')
-      .bs-slider-overlay
-      // Slide Text Layer
-      .carousel-caption.d-none.d-md-block.slide_style_center
-        h1(data-animation='animated flipInX') Bootstrap touch slider
-        p(data-animation='animated lightSpeedIn') Make Bootstrap Better together.
-        a.btn.btn-default(href='http://bootstrapthemes.co/', target='_blank', data-animation='animated fadeInUp') select one
-        a.btn.btn-primary(href='http://bootstrapthemes.co/', target='_blank', data-animation='animated fadeInDown') select two
-    // End of Slide
-    // Third Slide
-    .carousel-item
-      // Slide Background
-      img.d-block.w-100(src='https://images.pexels.com/photos/144345/pexels-photo-144345.jpeg?w=940&h=650&auto=compress&cs=tinysrgb', alt='Bootstrap Touch Slider')
-      .bs-slider-overlay
-      // Slide Text Layer
-      .carousel-caption.d-none.d-md-block.slide_style_right
-        h1(data-animation='animated zoomInLeft') Beautiful Animations
-        p(data-animation='animated fadeInRight') Lots of css3 Animations to make slide beautiful .
-        a.btn.btn-default(href='http://bootstrapthemes.co/', target='_blank', data-animation='animated fadeInLeft') select one
-        a.btn.btn-primary(href='http://bootstrapthemes.co/', target='_blank', data-animation='animated fadeInRight') select two
-
-    a.left.carousel-control(href='#sg-carousel', role='button', data-slide='prev')
-      span.fa.fa-angle-left(aria-hidden='true')
-      span.sr-only Previous
-    // Right Control
-    a.right.carousel-control(href='#sg-carousel', role='button', data-slide='next')
-      span.fa.fa-angle-right(aria-hidden='true')
-      span.sr-only Next
-// End  bootstrap-touch-slider Slider
-mixin carousel_animate(id, carousel_items, slides)
-  div(id=id class="sc_carousel carousel  slide carousel-fade" data-ride="carousel")
-    ol.carousel-indicators
-      each item in carousel_items
-        - var simple_slide ={"class":item.cls, 'data-slide-to':item.order, "data-target":item.id}
-        li()&attributes(simple_slide)          
-    .carousel-inner.carousel-zoom(role='listbox')      
-      each slide_item in slides
-        .carousel-item(class=slide_item.active)
-          - var imgSlide={"src":slide_item.src, "alt":slide_item.alt}
-            // Slide Background
-            img.d-block.w-100()&attributes(imgSlide)
-            .bs-slider-overlay
-            .container-fluid
-              .row
-                // Slide Text Layer
-                - var sc_caption={"class":slide_item.captionCls}
-                .carousel-caption.d-none.d-md-block()&attributes(sc_caption)
-                  - var contentCaption = {"data-animation":slide_item.animationTitle}
-                  h1()&attributes(contentCaption)= slide_item.titleText
-                  p(data-animation='animated fadeInLeft') Bootstrap carousel now touch enable slide.
-                  a.btn.btn-outline-primary(href='#', target='_blank', data-animation='animated fadeInLeft') select one
-    a.left.carousel-control(href='#sc_carousel', role='button', data-slide='prev')
-      span.fa.fa-angle-left(aria-hidden='true')
-      span.sr-only Previous
-    // Right Control
-    a.right.carousel-control(href='#sc_carousel', role='button', data-slide='next')
-      span.fa.fa-angle-right(aria-hidden='true')
-      span.sr-only Next
+include ../../mixins/_slideShow
 +carousel_animate("sc_carousel",[
   {"cls":"active","id":"#sc_carousel","order":"0" },
   {"id":"#sc_carousel","order":"1" },
   {"id":"#sc_carousel","order":"2" }],[
     { 
-      "src":"https://images.pexels.com/photos/144345/pexels-photo-144345.jpeg?w=940&h=650&auto=compress&cs=tinysrgb", 
+      "src":"https://images.pexels.com/photos/168872/pexels-photo-168872.jpeg?w=960&h=650&auto=compress&cs=tinysrgb", 
       "active":"active",
       "alt":"",
       "captionCls":"slide_style_left",
-      "animationTitle":"animated", 
-      "animationBtnStart":"animated",
-      "animationBtnEnd":"animated",
+      "captionAnimation":"animated slideInLeft",
+      "animationTitle":"animated fadeInDown",
       "titleText":"Titre", 
       "contentText":"Contenu",
-      "linkBtn":"#" 
+      "contentTextAnimation":"animated fadeInDown",
+      "btnHref":"#",
+      "btnCls":"btn btn-outline-primary",
+      "btnAnimation":"animated fadeInRight",
+      "btnText":"Plus"
     },
-    { 
-      "src":"https://images.pexels.com/photos/207990/pexels-photo-207990.jpeg?w=940&h=650&auto=compress&cs=tinysrgb", 
+
+    {
+      "src":"https://images.pexels.com/photos/240832/pexels-photo-240832.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb",
+      "active":"",
       "alt":"",
-      "captionCls":"slide_style_left",
-      "animationTitle":"animated", 
-      "animationBtnStart":"animated",
-      "animationBtnEnd":"animated",
-      "titleText":"Titre", 
-      "contentText":"Contenu",
-      "linkBtn":"#" 
+      "captionCls":"",
+      "captionAnimation":"animated slideInLeft",
+      "animationTitle":"animated fadeInDown",
+      "titleText":"Titre2",
+      "contentText":"Contenu2",
+      "contentTextAnimation":"animated fadeInDown",
+      "btnHref":"#",
+      "btnCls":"btn btn-outline-primary",
+      "btnAnimation":"animated fadeInUp",
+      "btnText":"Plus"
     },
-    { 
-      "src":"https://images.pexels.com/photos/144346/pexels-photo-144345.jpeg?w=940&h=650&auto=compress&cs=tinysrgb", 
+    {
+      "src":"https://static.pexels.com/photos/592940/pexels-photo-592940.jpeg",
+      "active":"",
       "alt":"",
-      "captionCls":"slide_style_left",
-      "animationTitle":"animated", 
-      "animationBtnStart":"animated",
-      "animationBtnEnd":"animated",
-      "titleText":"Titre", 
-      "contentText":"Contenu",
-      "linkBtn":"#" 
+      "captionCls":"slide_style_Right",
+      "captionAnimation":"animated slideInLeft",
+      "animationTitle":"animated fadeInDown",
+      "titleText":"Titre 1",
+      "contentText":"Contenu 1",
+      "contentTextAnimation":"animated fadeInDown",
+      "btnHref":"#",
+      "btnCls":"btn btn-outline-primary",
+      "btnAnimation":"animated fadeInLeft",
+      "btnText":"Plus"
     }
+
   
   
   ]

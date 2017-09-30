@@ -12,21 +12,25 @@
 }
 
 .carousel-caption {
-  top: 10%;
+  top: 0;
   h1 {
     font-size: 6em;
     font-weight: bold;
     margin: 0;
     padding: 0;
+    transition-delay: 3s;
+  }
+  a.btn{
+    transition-delay: 3s;
   }
 }
 
 .sc_carousel .carousel-control {
   &.left {
-    top: 18%;
+    top: calc(200px + 10px);
   }
   &.right {
-    top: 18%;
+    top: calc(200px + 10px);
     right: 4%;
   }
 }
@@ -104,7 +108,7 @@
 }
 
 .carousel-item.active img {
-  transition: transform 5000ms linear 0s;
+  transition: transform 4000ms linear 0s;
   transform: scale(1.05, 1.05);
 }
 
@@ -121,27 +125,32 @@
 }
 
 .carousel-caption {
-  left: 60%;
-  padding-bottom: 5%;
-  right: 0;
-  text-align: left;
+  width: 50%;
+  height: 100%;
+  background: rgba($gray-900,0.9);
+  padding-bottom: 0;
+  left: 0!important;
+  padding-top: 10%;
+  bottom: 0;
+
   h1 {
-    font-family: raavi;
+    //font-family: raavi;
     font-size: 60px;
     font-weight: 600;
     line-height: 18px;
+    font-family: "Roboto", sans-serif;
   }
   > {
     p {
       font-size: 30px;
       color: #fff;
     }
-    a {
-      text-transform: uppercase;
-      color: #fff;
-      background: #041132;
-      padding: 6px 12px;
-    }
+    //a {
+    //  text-transform: uppercase;
+    //  color: #fff;
+    //  background: #041132;
+    //  padding: 6px 12px;
+    //}
   }
 }
 
@@ -242,9 +251,10 @@
   p {
     animation-delay: 2s;
   }
-  button {
+  a.btn {
     animation-delay: 3s;
     margin-top: 25px;
+
   }
 }
 
