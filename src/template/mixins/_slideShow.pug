@@ -1,0 +1,28 @@
+mixin carousel_animate(id, carousel_items, slides)
+    div(id=id class="sc_carousel carousel  slide carousel-fade" data-ride="carousel")
+        ol.carousel-indicators
+            each item in carousel_items
+                - var simple_slide ={"class":item.cls, 'data-slide-to':item.order, "data-target":item.id}
+                li()&attributes(simple_slide)
+        .carousel-inner.carousel-zoom(role='listbox')
+            each slide_item in slides
+                .carousel-item(class=slide_item.active, data-animation='animated fadeInLeft slideInRight')
+                    - var imgSlide={"src":slide_item.src, "alt":slide_item.alt}
+                    // Slide Background
+                    img.d-block.w-100()&attributes(imgSlide)
+                    // Slide Text Layer
+                    - var sc_caption={"class":slide_item.captionCls,"data-animation":slide_item.captionAnimation}
+                    .carousel-caption.d-none.d-md-block()&attributes(sc_caption)
+                        - var contentCaption = {"data-animation":slide_item.animationTitle}
+                        h1()&attributes(contentCaption)= slide_item.titleText
+                        - var contentTextCaption = {"data-animation": slide_item.contentTextAnimation}
+                        p()&attributes(contentTextCaption)= slide_item.contentText
+                        - var contentBtnCaption = {"data-animation": slide_item.btnAnimation, "href": slide_item.btnHref, "class": slide_item.btnCls}
+                        a(target='_blank')&attributes(contentBtnCaption)= slide_item.btnText
+        a.left.carousel-control(href='#'+id, role='button', data-slide='prev')
+            span.fa.fa-angle-left(aria-hidden='true')
+            span.sr-only Previous
+        // Right Control
+        a.right.carousel-control(href='#'+id, role='button', data-slide='next')
+            span.fa.fa-angle-right(aria-hidden='true')
+            span.sr-only Next

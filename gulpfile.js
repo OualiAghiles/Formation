@@ -65,7 +65,7 @@ gulp.task('copy',function(){
 //      SASS
 //-----------------------------------------------------------
 gulp.task('sass', function(){
-gulp.src(['src/assets/sass/**/*.sass'])
+gulp.src(['src/assets/sass/**/*.sass', 'src/assets/sass/**/*.scss'])
 .pipe(plumber({
   errorHandler: function (error) {
     console.log(error.message);
@@ -130,6 +130,7 @@ gulp.src(['src/template/**/*.pug'])
 
 gulp.task('watch', ['browser-sync'], function(){
 gulp.watch("src/assets/sass/**/*.sass", ['sass']).on('change', browserSync.reload);
+gulp.watch("src/assets/sass/**/*.scss", ['sass']).on('change', browserSync.reload);
 gulp.watch("src/assets/js/**/*.js", ['scripts']).on('change', browserSync.reload);
 gulp.watch("src/template/**/*.pug", ['pug']);
 gulp.watch("src/assets/images/*.*", ['images']);
