@@ -21,6 +21,7 @@ var pug = require('gulp-pug');
 // browserSync / Notify
 var browserSync = require('browser-sync').create();
 var notify = require('gulp-notify');
+
 require('es6-promise').polyfill();
 gulp.task('browser-sync', function() {
     browserSync.init(['/assets/styles', '/assets/js/'], {
