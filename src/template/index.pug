@@ -1,9 +1,24 @@
 extends _layouts/wrapper
 block content
   include pages/index/slideshow
-  section.pt-5
-    .cut-top
+  section.py-5.section
+    .cut-top.cut
     .container
       h1.text-center Bonjour!!!
       include pages/index/stadium
+    .cut-bottom.cut
+  section.py-5.section.bg-hero
+    .container
+      .row
+        .col.col-md-8.py-5
+          h1.py-3.text-light Section Hero!!!
+          p.lead.text-light
+            | usce in ligula vehicula sapien hendrerit porttitor. Proin pharetra sem nec ligula vehicula porta. Nullam rutrum id eros sodales varius. Vestibulum augue nisi, malesuada mollis augue eu
+          p.text-light
+            | usce in ligula vehicula sapien hendrerit porttitor. Proin pharetra sem nec ligula vehicula porta. Nullam rutrum id eros sodales varius. Vestibulum augue nisi, malesuada mollis augue eu
 
+  section.py-5.mb-5.section
+    .cut-top.cut
+    .container
+      h1.text-center Match dans la region
+      include pages/index/match_near

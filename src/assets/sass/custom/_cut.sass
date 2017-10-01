@@ -10,10 +10,11 @@ section
   width: 0
   height: 0
   border-top: 80px solid transparent
-  border-right: 30px solid #fff
-  border-right-width: calc(100vw - 19px)
-
-
+  border-right: 30px solid white
+  &.primary
+    border-right: 30px solid $sc_blue
+  &.foot
+    border-right: 30px solid #33383C
 .cut-bottom
   content: ' '
   position: absolute
@@ -23,4 +24,14 @@ section
   width: 0
   height: 0
   border-bottom: 80px solid transparent
-  border-left: 30px solid white
+  border-left: 30px solid #fff
+
+.footer
+  background: #33383C
+  padding-top: 90px
+  color: #fff
+.bg-hero
+  background-image: url("../images/hero.png")
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: top right

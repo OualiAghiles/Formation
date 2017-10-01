@@ -1,5 +1,5 @@
 mixin carousel_animate(id, carousel_items, slides)
-    div(id=id class="sc_carousel carousel  slide carousel-fade" data-ride="carousel")
+    div(id=id class="sc_carousel carousel bs  slide carousel-fade" data-ride="carousel")
         ol.carousel-indicators
             each item in carousel_items
                 - var simple_slide ={"class":item.cls, 'data-slide-to':item.order, "data-target":item.id}

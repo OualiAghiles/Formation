@@ -2,10 +2,10 @@
 
 .sc_carousel {
   position: relative;
-  height: 600px;
+  max-height: 700px;
   overflow: hidden;
   .carousel-inner .carousel-item {
-    height: 600px;
+    height: 700px;
     position: relative;
     overflow: hidden;
   }

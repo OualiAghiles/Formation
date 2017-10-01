@@ -1,16 +1,16 @@
-nav.navbar.navbar-expand-lg.navbar-light
+nav.navbar.w-100
   .container
-    button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarTogglerDemo01', aria-controls='navbarTogglerDemo01', aria-expanded='false', aria-label='Toggle navigation')
+    button.navbar-toggler.d-md-none(type='button', data-toggle='collapse', data-target='#sc_nav', aria-controls='sc_nav', aria-expanded='false', aria-label='Toggle navigation')
       span.navbar-toggler-icon
-    #navbarTogglerDemo01.collapse.navbar-collapse
+    #sc_nav.collapse.navbar-collapse.flex-row
       a.navbar-brand(href='#')
-        img(src="assets/images/logo.png" height="50px" alt="logo Score Cup")
+        img(src="assets/images/logo.png" ata-active-url="assets/images/logo.png" height="50px" alt="logo Score Cup")
       ul.navbar-nav.ml-auto.mt-2.mt-lg-0
-        li.nav-item.active
+        li.active
           a.nav-link(href='#')
             | Home 
             span.sr-only (current)
-        li.nav-item.dropdown
+        li.dropdown
           a.nav-link.dropdown-toggle(href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Organier
           .dropdown-menu(aria-labelledby="dropdownMenuLink")
             a.dropdown-item(href='creer_stade.html') Creer un stade
@@ -18,5 +18,5 @@ nav.navbar.navbar-expand-lg.navbar-light
             a.dropdown-item(href='inviter_ami.html') Inviter amis
             .dropdown-divider
             a.dropdown-item(href='rejoindre_match.html') Join
-        li.nav-item
+        li
           a.nav-link(href='#') Contact
